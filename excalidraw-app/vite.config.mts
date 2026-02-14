@@ -80,6 +80,13 @@ export default defineConfig(({ mode }) => {
     build: {
       outDir: "build",
       rollupOptions: {
+      // AGGIUNGI QUESTA SEZIONE "input" QUI SOTTO:
+        input: {
+          main: path.resolve(__dirname, "index.html"),
+          esposizione: path.resolve(__dirname, "esposizione.html"),
+        },
+        output: {
+          assetFileNames(chunkInfo) {
         output: {
           assetFileNames(chunkInfo) {
             if (chunkInfo?.name?.endsWith(".woff2")) {
