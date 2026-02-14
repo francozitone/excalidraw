@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
+import { createRoot } from "react-dom/client"; // Serve per Vite
 
+// In Vite si usa import.meta.env invece di process.env
 const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  import.meta.env.VITE_PUBLIC_SUPABASE_URL || "",
+  import.meta.env.VITE_PUBLIC_SUPABASE_ANON_KEY || ""
 );
 
 export default function GalleriaEsposizione() {
