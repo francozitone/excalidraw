@@ -68,7 +68,7 @@
   "rewrites": [
     {
       "source": "/esposizione",
-      "destination": "/index.html"
+      "destination": "/"
     }
   ],
   "outputDirectory": "excalidraw-app/build",
