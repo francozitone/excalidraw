@@ -54,8 +54,8 @@ const rootElement = document.getElementById("root")!;
 const root = createRoot(rootElement);
 registerSW();
 
-// Se l'URL finisce con /esposizione, mostra la Galleria. Altrimenti la lavagna.
-if (window.location.pathname.includes("/esposizione")) {
+// Questo riconosce sia /esposizione che /#esposizione
+if (window.location.pathname.includes("/esposizione") || window.location.hash === "#esposizione") {
   root.render(
     <StrictMode>
       <GalleriaEsposizione />
